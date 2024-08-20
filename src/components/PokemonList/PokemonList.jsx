@@ -2,13 +2,23 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import './PokemonList.css';
 import Pokemon from "../Pokemon/Pokemon";
+
 function PokemonList(){
      const [pokemonList, setPokemonList] = useState([]);
      const [isLoading, setIsLoading] = useState(true)
-     const POKEDEX_URL = 'https://pokeapi.co/api/v2/pokemon';
+     const [pokedexUrl, setPokedexUrl] = useState('https://pokeapi.co/api/v2/pokemon');
+     const [nextUrl, setNextUrl] = useState('');
+     const [prevUrl, setPrevUrl] = useState('');
+
+
     async function downloadPokemons(){
-        const response = await axios.get(POKEDEX_URL); // this downloads list of 20 pokemon.
-        const pokemonResults = response.data.results; // we get the array of pokemon from result.
+        setIsLoading(true);
+        const response = await axios.get(pokedexUrl); // this downloads list of 20 pokemon.
+        const pokemonResults = response.data.results;// we get the array of pokemon from result.
+        console.log(response.data);
+        setNextUrl(response.data.next);
+        setPrevUrl(response.data.previous)
+        
         // iterating over array of pokemon, and using their url, to create an array of promises that will download those 20 pokemon.
         console.log(pokemonResults);
         
@@ -34,7 +44,7 @@ function PokemonList(){
        
         downloadPokemons();
        
-    }, []) // with empt array only first time the effect called will print
+    }, [pokedexUrl]) // with empt array only first time the effect called will print
     // if we remove the array empty symbol the effect call will print always as page render
     // use effect generally used when we want to comr download data
    
@@ -46,8 +56,8 @@ function PokemonList(){
         }  
          </div>
          <div className="controls">
-            <button>Prev</button>
-            <button>Next</button>
+            <button disabled = {prevUrl == null} onClick={() => setPokedexUrl(prevUrl) }>Prev</button>
+            <button disabled = {nextUrl == null} onClick={() => setPokedexUrl(nextUrl) }>Next</button>
          </div>
         </div>
     )
