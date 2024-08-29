@@ -19,18 +19,25 @@ Pokémon Images: See images of the Pokémon fetched directly from the API.
 
 # Technologies Used
 React Native: Framework for building the mobile application.
+
 JavaScript: Programming language used to create interactivity.
+
 API: Data fetched from the PokéAPI.
 
 # Installation
 Clone the repository: git clone https://github.com/ansarialiakbar/Pokedex.git
+
 Navigate to the project directory: cd Pokedex
+
 Install the dependencies: npm install
+
 Start the development server: npx react-native start
 
 # Usage
 Search Pokémon: Enter the name or ID of a Pokémon in the search bar to find it.
+
 View Details: Tap on a Pokémon from the list to view its details and image.
+
 Navigate Back: Use the back button to return to the Pokémon list.
 
 
