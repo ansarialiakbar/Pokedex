@@ -8,7 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 - 
 - # Pokedex
-- A Pokedex application built using React Native. This app fetches data and images of Pokémon from an API, providing users with detailed information about their favorite Pokémon.
+- A Pokedex application built using React js. This app fetches data and images of Pokémon from an API, providing users with detailed information about their favorite Pokémon.
 
 - # Features
 Search Pokémon: Search for any Pokémon by name or ID.
