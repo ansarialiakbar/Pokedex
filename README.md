@@ -18,7 +18,7 @@ View Details: Access detailed information about each Pokémon, including type, a
 Pokémon Images: See images of the Pokémon fetched directly from the API.
 
 # Technologies Used
-React Native: Framework for building the mobile application.
+React js: Framework for building the web application.
 
 JavaScript: Programming language used to create interactivity.
 
